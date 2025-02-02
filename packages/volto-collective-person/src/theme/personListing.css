@@ -1,0 +1,20 @@
+.listing-person-items {
+  display: flex;
+  flex-direction: row;
+  .listing-person-item {
+    padding: 10px;
+    .person-card {
+      border-radius: 4px;
+      box-shadow:
+        rgb(212, 212, 213) 0px 1px 3px 0px,
+        rgb(212, 212, 213) 0px 0px 0px 1px;
+    }
+    .person-card-image {
+      height: 200px;
+    }
+    .person-card-content h3 {
+      padding-bottom: 10px;
+      text-align: center;
+    }
+  }
+}

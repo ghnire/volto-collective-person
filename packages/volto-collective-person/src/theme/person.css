@@ -1,0 +1,25 @@
+.divPersonPage {
+  display: flex;
+  .personPageImage {
+    max-width: 300px;
+  }
+  .personPageDetails {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+
+    .personPagePrimaryRole {
+      padding-bottom: 20px;
+    }
+
+    .personPageDetailRows {
+      display: flex;
+      flex-direction: row;
+      font-size: 18px;
+
+      .personPageIconPadding {
+        padding-left: 20px;
+      }
+    }
+  }
+}
