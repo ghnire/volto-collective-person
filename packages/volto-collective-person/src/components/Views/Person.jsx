@@ -21,9 +21,9 @@ const PersonView = (props) => {
           </h1>
           <div className="divPersonPage">
             <div className="personPageImage">
-              {content.image?.scales?.mini ? (
+              {content.image?.scales?.large ? (
                 <Image
-                  src={flattenToAppURL(content.image?.scales?.mini?.download)}
+                  src={flattenToAppURL(content.image?.scales?.large?.download)}
                   alt={content.title}
                 />
               ) : (
@@ -39,7 +39,10 @@ const PersonView = (props) => {
                 {
                   content.roles?.map((item) => {
                     return (
-                      <h2>
+                      <h2
+                        className="personPagePrimRoleHeader"
+                        key={item['@id']}
+                      >
                         <span>{item.title}</span>
                       </h2>
                     );
@@ -56,12 +59,16 @@ const PersonView = (props) => {
                     />
                   </p>
                 )}
-                {content.roles?.slice(1).map((item) => {
-                  {
-                    item.index != 0;
-                  }
-                  return <p className="personPageIconPadding">{item.title}</p>;
-                })}
+                {content.roles
+                  ?.slice(1)
+                  .filter((item) => item.index !== 0)
+                  .map((item) => {
+                    return (
+                      <p className="personPageIconPadding" key={item['@id']}>
+                        {item.title}
+                      </p>
+                    );
+                  })}
               </div>
               <div className="personPageDetailRows">
                 <p>

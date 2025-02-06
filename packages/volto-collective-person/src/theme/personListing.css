@@ -1,18 +1,26 @@
 .listing-person-items {
   display: flex;
-  flex-direction: row;
+  height: 0;
+  flex-basis: 100%;
+  flex-wrap: wrap;
   .listing-person-item {
     padding: 10px;
+    border-radius: 4px;
+    margin: 10px;
+    box-shadow:
+      rgb(212, 212, 213) 0px 1px 3px 0px,
+      rgb(212, 212, 213) 0px 0px 0px 1px;
     .person-card {
-      border-radius: 4px;
-      box-shadow:
-        rgb(212, 212, 213) 0px 1px 3px 0px,
-        rgb(212, 212, 213) 0px 0px 0px 1px;
+      display: flex;
+      height: 225px;
+      flex-direction: column;
     }
     .person-card-image {
-      height: 200px;
+      width: auto;
+      height: 175px;
     }
     .person-card-content h3 {
+      min-height: 50px;
       padding-bottom: 10px;
       text-align: center;
     }
