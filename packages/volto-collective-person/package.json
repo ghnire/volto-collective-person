@@ -1,6 +1,6 @@
 {
   "name": "@sphnl/volto-collective-person",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Volto add-on matching Plone collective.person",
   "main": "src/index.js",
   "license": "MIT",
