@@ -1,4 +1,4 @@
-import { Image } from 'semantic-ui-react';
+import { Image, Container } from 'semantic-ui-react';
 import { UniversalLink } from '@plone/volto/components';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -24,43 +24,45 @@ const PersonCardView = ({ items, linkTitle, linkHref, isEditMode }) => {
 
   return (
     <>
-      <div className="listing-person-items">
-        {items.map((item) => {
-          return (
-            <div className="listing-person-item" key={item['@id']}>
-              <ConditionalLink
-                item={item}
-                condition={!isEditMode}
-                className="listing-link"
-              >
-                <div className="person-card">
-                  {item.image_scales?.image[0]?.scales?.mini ? (
-                    <div>
+      <Container>
+        <div className="listing-person-items">
+          {items.map((item) => {
+            return (
+              <div className="listing-person-item" key={item['@id']}>
+                <ConditionalLink
+                  item={item}
+                  condition={!isEditMode}
+                  className="listing-link"
+                >
+                  <div className="person-card">
+                    {item.image_scales?.image[0]?.scales?.mini ? (
+                      <div>
+                        <Image
+                          src={`${item['@id']}/${item.image_scales?.image[0]?.scales?.mini?.download}`}
+                          className="person-card-image"
+                        />
+                      </div>
+                    ) : (
                       <Image
-                        src={`${item['@id']}/${item.image_scales?.image[0]?.scales?.mini?.download}`}
+                        src={DefaultImageSVG}
+                        alt="no image found"
                         className="person-card-image"
                       />
+                    )}
+                    <div className="person-card-content">
+                      <h3>
+                        <UniversalLink href={item['@id']}>
+                          {item.title}
+                        </UniversalLink>
+                      </h3>
                     </div>
-                  ) : (
-                    <Image
-                      src={DefaultImageSVG}
-                      alt="no image found"
-                      className="person-card-image"
-                    />
-                  )}
-                  <div className="person-card-content">
-                    <h3>
-                      <UniversalLink href={item['@id']}>
-                        {item.title}
-                      </UniversalLink>
-                    </h3>
                   </div>
-                </div>
-              </ConditionalLink>
-            </div>
-          );
-        })}
-      </div>
+                </ConditionalLink>
+              </div>
+            );
+          })}
+        </div>
+      </Container>
 
       {link && <div className="footer">{link}</div>}
     </>

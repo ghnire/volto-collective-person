@@ -1,7 +1,5 @@
 .listing-person-items {
   display: flex;
-  height: 0;
-  flex-basis: 100%;
   flex-wrap: wrap;
   .listing-person-item {
     padding: 10px;
