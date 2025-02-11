@@ -1,6 +1,6 @@
 {
   "name": "@sphnl/volto-collective-person-dev",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "Volto add-on matching Plone collective.person",
   "author": "Nils Reuvers",
   "homepage": "https://github.com/ghnire/volto-collective-person",
