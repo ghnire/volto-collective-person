@@ -43,18 +43,16 @@ const PersonCardView = ({ items, linkTitle, linkHref, isEditMode }) => {
                         />
                       </div>
                     ) : (
-                      <Image
-                        src={DefaultImageSVG}
-                        alt="no image found"
-                        className="person-card-image"
-                      />
+                      <div>
+                        <Image
+                          src={DefaultImageSVG}
+                          alt="no image found"
+                          className="person-card-image"
+                        />
+                      </div>
                     )}
                     <div className="person-card-content">
-                      <h3>
-                        <UniversalLink href={item['@id']}>
-                          {item.title}
-                        </UniversalLink>
-                      </h3>
+                      <h3>{item.title}</h3>
                     </div>
                   </div>
                 </ConditionalLink>

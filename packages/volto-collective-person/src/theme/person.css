@@ -1,25 +1,41 @@
-.divPersonPage {
+.personContainer {
   display: flex;
-  .personPageImage {
-    max-width: 300px;
-  }
-  .personPageDetails {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-
-    .personPagePrimaryRole {
-      padding-bottom: 20px;
-    }
-
-    .personPageDetailRows {
+  .divPersonPage {
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 auto !important;
+    .divPersonDetail {
       display: flex;
       flex-direction: row;
-      font-size: 18px;
-
-      .personPageIconPadding {
+      .personPageImage {
+        max-width: 300px;
+      }
+      .personPageDetails {
+        display: flex;
+        flex-direction: column;
         padding-left: 20px;
+
+        .personPagePrimaryRole {
+          padding-bottom: 20px;
+        }
+
+        .personPageDetailRows {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          font-size: 18px;
+
+          .personPageIconPadding {
+            padding-left: 20px;
+          }
+        }
       }
     }
   }
+}
+
+.flexrow_nowrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }

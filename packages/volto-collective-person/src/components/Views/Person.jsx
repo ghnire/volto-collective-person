@@ -2,6 +2,8 @@ import { Container as SemanticContainer, Image } from 'semantic-ui-react';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import config from '@plone/volto/registry';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import emailSVG from '@plone/volto/icons/email.svg';
 import mobileSVG from '@plone/volto/icons/mobile.svg';
 import addRoleSVG from '@plone/volto/icons/add-user.svg';
@@ -14,12 +16,12 @@ const PersonView = (props) => {
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
   return (
     <>
-      <Container>
-        <div id="personPage">
+      <Container className="personContainer">
+        <div id="personPage" className="divPersonPage">
           <h1 className="documentFirstHeading personFirstHeading">
             <span>{content.title}</span>
           </h1>
-          <div className="divPersonPage">
+          <div className="divPersonDetail">
             <div className="personPageImage">
               {content.image?.scales?.large ? (
                 <Image
@@ -71,24 +73,32 @@ const PersonView = (props) => {
                   })}
               </div>
               <div className="personPageDetailRows">
-                <p>
-                  <Icon name={emailSVG} size="24px" />
-                </p>
-                <p className="personPageIconPadding">
-                  <a href={`mailto:${content.contact_email}`}>
+                <UniversalLink
+                  title={content.contact_email}
+                  href={`mailto:${content.contact_email}`}
+                  className="flexrow_nowrap"
+                >
+                  <p>
+                    <Icon name={emailSVG} size="24px" />
+                  </p>
+                  <p className="personPageIconPadding">
                     {content.contact_email}
-                  </a>
-                </p>
+                  </p>
+                </UniversalLink>
               </div>
               <div className="personPageDetailRows">
-                <p>
-                  <Icon name={mobileSVG} size="24px" />
-                </p>
-                <p className="personPageIconPadding">
-                  <a href={`tel:${content.contact_phone}`}>
+                <UniversalLink
+                  title={content.contact_phone}
+                  href={`tel:${content.contact_phone}`}
+                  className="flexrow_nowrap"
+                >
+                  <p>
+                    <Icon name={mobileSVG} size="24px" />
+                  </p>
+                  <p className="personPageIconPadding">
                     {content.contact_phone}
-                  </a>
-                </p>
+                  </p>
+                </UniversalLink>
               </div>
             </div>
           </div>
