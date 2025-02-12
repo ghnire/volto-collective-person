@@ -23,10 +23,16 @@
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
+          margin-bottom: 18px;
           font-size: 18px;
 
           .personPageIconPadding {
             padding-left: 20px;
+            margin-bottom: 0px;
+          }
+          .personPageSecondaryRoles {
+            display: flex;
+            flex-direction: column;
           }
         }
       }

@@ -61,16 +61,18 @@ const PersonView = (props) => {
                     />
                   </p>
                 )}
-                {content.roles
-                  ?.slice(1)
-                  .filter((item) => item.index !== 0)
-                  .map((item) => {
-                    return (
-                      <p className="personPageIconPadding" key={item['@id']}>
-                        {item.title}
-                      </p>
-                    );
-                  })}
+                <div className="personPageSecondaryRoles">
+                  {content.roles
+                    ?.slice(1)
+                    .filter((item) => item.index !== 0)
+                    .map((item) => {
+                      return (
+                        <p className="personPageIconPadding" key={item['@id']}>
+                          {item.title}
+                        </p>
+                      );
+                    })}
+                </div>
               </div>
               <div className="personPageDetailRows">
                 <UniversalLink
